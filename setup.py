@@ -1,13 +1,4 @@
-try:
-    # Try using ez_setup to install setuptools if not already installed.
-    from ez_setup import use_setuptools
-    use_setuptools()
-except ImportError:
-    # Ignore import error and assume Python 3 which already has setuptools.
-    pass
-
-from setuptools import setup, find_packages
-
+from distutils.core import setup
 classifiers = ['Development Status :: 4 - Beta',
                'Operating System :: POSIX :: Linux',
                'License :: OSI Approved :: MIT License',
@@ -25,4 +16,5 @@ setup(name              = 'Adafruit_PureIO',
       description       = 'Pure python (i.e. no native extensions) access to Linux IO including I2C and SPI.  Drop in replacement for smbus and spidev modules.',
       license           = 'MIT',
       classifiers       = classifiers,
-      packages          = find_packages())
+      packages          = ['Adafruit_PureIO']
+     )
